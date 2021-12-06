@@ -1,5 +1,10 @@
 # Branch Downloader
 
+![issues](https://img.shields.io/github/issues/sebastiaolucas/BranchDownloader)
+![forks](https://img.shields.io/github/forks/sebastiaolucas/BranchDownloader)
+![stars](https://img.shields.io/github/stars/sebastiaolucas/BranchDownloader)
+
+
 Branch Downloader é um aplicativo Android desenvolvido para que o usuário possa baixar branches de repositórios do Github.
 
 ## Índice
