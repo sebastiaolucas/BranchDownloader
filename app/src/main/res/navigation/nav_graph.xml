@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/searchListFragment"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/searchListFragment"
+        android:name="br.com.marquesapps.branchdownloader.ui.fragment.SearchListFragment"
+        android:label="Repository Results"
+        tools:layout="@layout/search_list_layout">
+        <action
+            android:id="@+id/action_searchListFragment_to_repositoryFragment"
+            app:destination="@id/repositoryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/repositoryFragment"
+        android:name="br.com.marquesapps.branchdownloader.ui.fragment.RepositoryFragment"
+        android:label="Repository"
+        tools:layout="@layout/repository_layout"/>
+
+    <fragment
+        android:id="@+id/branchListFragment"
+        android:name="br.com.marquesapps.branchdownloader.ui.fragment.BranchListFragment"
+        android:label="Branches"
+        tools:layout="@layout/branch_list_layout"/>
+</navigation>

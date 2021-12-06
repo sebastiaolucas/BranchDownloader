@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.widget.TextView"/>
+        <import type="android.view.View"/>
+        <variable
+            name="listComponentsData"
+            type="br.com.marquesapps.branchdownloader.ui.databinding.ListComponentsData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/search_list_layout_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{listComponentsData.messageText}"
+            android:textAlignment="@{listComponentsData.messageCenter ? TextView.TEXT_ALIGNMENT_CENTER : TextView.TEXT_ALIGNMENT_TEXT_END}"
+            android:visibility="@{listComponentsData.messageVisibility ? View.VISIBLE : View.GONE}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/search_list_layout_repository_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="5 favorites"
+            tools:textAlignment="textEnd"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_list_layout_repository_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="@{listComponentsData.listVisibility ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/search_list_layout_progress_loading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_list_layout_message"
+            tools:itemCount="5"
+            tools:listitem="@layout/repository_item" />
+
+        <ProgressBar
+            android:id="@+id/search_list_layout_progress_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="@{listComponentsData.progressVisibility ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_list_layout_repository_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
